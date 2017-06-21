@@ -21,3 +21,7 @@ Goals:
 - [ ] add delete/edit partner
 - [ ] log system into profile director
 - [ ] login for workers
+
+workspace page screen:
+
+![workspace page](https://github.com/kostDev/qb/blob/master/screenshots/workspace.png)
