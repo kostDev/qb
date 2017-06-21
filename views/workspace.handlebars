@@ -1,0 +1,363 @@
+<div id='workspace'>
+	<!-- -->
+	<div class="idn">
+		<!-- -->
+		<div class="pak">
+		<p style="padding-left: -12px;">WorkBook [{{countWorkers}}/8]</p>
+		</div>
+	<!-- Workpanel - 4 tools -->
+		<div class='workpanel'>
+		<!-- List-->
+			<a title='list' class="btn btn-warning btn-xs" id="wrklist">
+			<span class="glyphicon glyphicon-align-justify"></span></a>
+		<!-- End List-->
+		<!-- Add-->
+			<a title='add' class="btn btn-success btn-xs" id="addwrk">
+			<span class="glyphicon glyphicon-plus"></span> </a>
+		<!-- End Add-->
+		<!-- Edit-->
+			<a title='edit' class="btn btn-primary btn-xs" id="editwrk">
+			<span class="glyphicon glyphicon-pencil"></span>
+			</a>
+		<!-- End Edit-->
+	    <!-- Update-->
+			<a title='update' class="btn btn-info btn-xs" href="/workspace">
+			<span class="glyphicon glyphicon-refresh"></span>
+			</a>
+		<!-- End Update-->
+		<!-- Delete-->
+			<a title='delete' class="btn btn-danger btn-xs" id="deletewrk">
+			<span class="glyphicon glyphicon-trash"></span>
+			</a>
+		<!-- End Delete-->
+		</div>
+	<!-- End Workpanel - 4 tools -->
+		<!-- -->
+		<div class="clear">
+			<br><br>
+			<!-- отступ после тулов-->
+		</div>
+		<!-- -->
+	<div id="borderworker">
+		<!-- -->
+		{{#if workers}}
+	    	{{#each workers}}
+		<div  class="ping">
+			<details > 
+	    	<summary style="padding-bottom: 5px;"><b>ID:{{@index}}.{{name}}</b> | was created: {{created}}
+	    	<div class='workpanel'>
+	    		<!-- add comment-->
+	    		<a title='add comment' class="btn btn-primary btn-xs" id="{{@index}}">
+					<span class="glyphicon glyphicon-comment"></span>
+				</a>
+				<!-- add task -->
+				<a title='add task' class="btn btn-primary btn-xs" id="">
+					<span class="glyphicon glyphicon-tag"></span>
+				</a>
+	    	</div>
+	    	</summary>
+	    		<div class="preinfo">
+			    	<label>address: </label>{{address}}<br>
+			    	<label>phone1: </label>{{phone1}}<br>
+			    	{{#if phone2}}
+			    	<label>phone2: </label>{{phone2}}<br>
+			    	{{/if}}
+			    	<label>email: </label>{{email}}<br>
+			    	{{#if editTime}}
+	    			<label style="color: silver;">edited : {{editTime}}</label>
+	    		{{/if}}
+	    		</div>
+			</details>
+		</div>
+			{{/each}}
+			{{else}}
+				<p><b>Press + to Add Worker!</b></p>
+		{{/if}}
+	</div>
+		<!-- add form -->
+	<div id='addworker'>
+		<div  class="ping">
+			<details open> 
+	    	<summary><b>Add worker</b></summary>
+	    		<div class="preinfo">
+	    		<form class="form_step" 
+			      action="/workspace/addworker" method="post">
+			      	<label>Worker: </label>
+			      	<input type="text" name="name" placeholder="Full Name*" maxlength="45" required="required" class="form-control">
+			      	<!-- Address -->
+			      	<input type="text" name="address" placeholder="Adress*" maxlength="50" required="required" class="form-control">
+					<!-- Phone1 -->
+			      	<input type="text" name="phone1" placeholder="phone number_1*" maxlength="45" required="required" class="form-control">
+			      	<!-- Phone2 -->
+			      	<input type="text" name="phone2" placeholder="phone number_2" maxlength="45" class="form-control">
+			      	<!-- Email -->
+			      	<input type="text" name="email" placeholder="email" maxlength="45" class="form-control">
+			      	<br>
+			      	<button  type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+			      </form>
+	    		</div>
+			</details>
+		</div>
+	</div>
+
+	<div id='editworker'>
+		<div  class="ping">
+			<details open> 
+	    	<summary><b>Edit worker</b></summary>
+	    		<div class="preinfo">
+	    		<form class="form_step" 
+			      action="/workspace/editworker" method="post">
+			      	<label>Worker: </label>
+			      	<input type="text" name="name" placeholder="ID:Full Name*" maxlength="45" required="required" class="form-control">
+					<p class="bg-info" align="center" style="font-size: 15px; box-shadow: 0 0 1px black">Enter text in any field which you want to change:</p>
+			      	<input type="text" name="newname" placeholder="Full Name" maxlength="45" class="form-control">
+			      	<!-- Address -->
+			      	<input type="text" name="address" placeholder="Adress" maxlength="50" class="form-control">
+					<!-- Phone1 -->
+			      	<input type="text" name="phone1" placeholder="phone number_1" maxlength="45" class="form-control">
+			      	<!-- Phone2 -->
+			      	<input type="text" name="phone2" placeholder="phone number_2" maxlength="45" class="form-control">
+			      	<!-- Email -->
+			      	<input type="text" name="email" placeholder="email" maxlength="45" class="form-control">
+			      	<br>
+			      	<button  type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+			      </form>
+	    		</div>
+			</details>
+		</div>
+	</div>
+
+	<div id='deleteworker'>
+		<div  class="ping">
+			<details open> 
+	    	<summary><b>Delete worker</b></summary>
+	    		<div class="preinfo">
+	    		<form class="form_step" 
+			      action="/workspace/deleteworker" method="post">
+			      	<label>Worker: </label>
+			      	<input type="text" name="name" placeholder="ID:Full Name*" maxlength="45" required="required" class="form-control">
+			      	<br>
+			      	<button  type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+			      </form>
+	    		</div>
+			</details>
+		</div>
+	</div>
+	</div><!-- end class idn -->
+	<!-- -->
+
+
+
+
+	<!-- -->	
+	<div class="idn">
+		<!-- -->
+		<div class="pak">
+		<p> Events [{{countEvents}}/15]</p>
+		</div>
+	<!-- Workpanel - 4 tools -->
+		<div class='workpanel'>
+		<!-- Add-->
+			<a title='add' class="btn btn-success btn-xs" id="addev">
+			<span class="glyphicon glyphicon-plus"></span> </a>
+		<!-- End Add-->
+		<!-- Edit-->
+			<a title='edit' class="btn btn-primary btn-xs" id="editev">
+			<span class="glyphicon glyphicon-pencil"></span>
+			</a>
+		<!-- End Edit-->
+	    <!-- Update-->
+			<a title='update' class="btn btn-info btn-xs" href="/workspace">
+			<span class="glyphicon glyphicon-refresh"></span>
+			</a>
+		<!-- End Update-->
+		<!-- Delete-->
+			<a title='delete' class="btn btn-danger btn-xs" id="delev">
+			<span class="glyphicon glyphicon-trash"></span>
+			</a>
+		<!-- End Delete-->
+		</div>
+	<!-- End Workpanel - 4 tools -->
+		<!-- -->
+		<div class="clear">
+			<br><br>
+		</div>
+		<!-- -->
+		<!-- borderEvent -ehigh -emiddle -elow -->
+		<div id="borderevent">
+			<div  class="ping" id="elow">
+				<details open>
+		    	<summary></summary>
+		    	<table class="table table-bordered">
+		    	<tr class="active">
+	  				<th>ID</th>
+	  				<th>Name</th>
+	  				<th>Worker</th>
+	  				<th>Date</th>
+	  				<th>Type</th>
+  				</tr>
+  				{{#if events}}
+  					{{#each events}}
+  				<tr class="success">
+	    			<td align="center">{{id}}</td>
+	   				<td align="center">
+	   				<details>
+	   				<summary>{{name}}</summary>
+	   				<pre>{{info}}</pre>
+	   				</details>
+	   				</td>
+	   				<td align="center">
+	   					{{#if workers}}
+	   						{{#each workers}}
+	   						<b>{{name}}</b>
+	   						{{/each}}
+	   					{{else}}
+	   						-----
+	   					{{/if}}
+	   				</td> 
+	    			<td align="center">{{date}}</td>
+	    			<td>{{type}}</td>
+ 				</tr>
+ 					{{/each}}
+ 				{{else}}
+ 					<p align="center"> Press [+] to add Event</p>
+ 				{{/if}}
+				</table>
+				</details>
+			</div>
+		</div>
+		<!-- end borderEvent -->
+		<!-- add event form -->
+		<div id='addevent'>
+			<div  class="ping">
+				<details open> 
+		    	<summary><b>Add Event</b></summary>
+		    		<div class="preinfo">
+		    		<form class="form_step" 
+				      action="/workspace/addevent" method="post">
+				      	<br>
+				      	<!-- ID EVENT-->
+				      	<input type="text" name="id" maxlength="10"
+				      	placeholder="Event ID:" class="form-control"
+				      	required="required" title="Use if you want to delete event">
+				      	<!-- Event Name -->
+				      	<input type="text" name="name" 
+				      	placeholder="Event Name:"
+				      	class="form-control" maxlength="45" 
+				      	required="required">
+				      	<!-- Event text-->
+				      	<textarea rows="4" cols="50" name="info"  placeholder="About Event(180chars):"
+				      	class="form-control" maxlength="180" 
+				      	required="required"></textarea>
+
+				      	<!-- Event Date -->
+				      	<label>Event end (date_time):</label>
+				      	<input align='center' type="datetime-local" name="date" class="form-control" required="required">
+				      	<!-- Event type-->
+				      	<div class="form-group" align="center">
+				      		<label>Event priority:</label><br>
+						    <label class="radio-inline">
+						      <input name='type' type="radio" id="inlineRadio1" value="high"><span
+						      style="color:darkred;" ><b>High</b></span>
+						    </label>
+						    <label class="radio-inline">
+						      <input name='type' type="radio" id="inlineRadio2" value="middle"><span
+						      style="color:darkblue;" ><b>Middle</b></span>
+						    </label>
+						    <label class="radio-inline">
+						      <input name='type' type="radio" id="inlineRadio3" value="low" checked><span
+						      style="color:darkgreen;" ><b>Low</b></span>
+						    </label>
+	  					</div>
+	  					<!-- Submit button-->
+				      	<button  type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+				      </form>
+		    		</div>
+				</details>
+			</div>
+		</div>
+		<!-- End add event -->
+		<!-- Delete event, form -->	
+		<div id='deleteevent'>
+			<div  class="ping">
+				<details open> 
+		    	<summary><b>Delete Event</b></summary>
+		    		<div class="preinfo">
+		    		<form class="form_step" 
+				      action="/workspace/deleteevent" method="post">
+				      	<br>
+				      	<!-- ID EVENT-->
+				      	<input type="text" name="id" maxlength="10"
+				      	placeholder="Event ID:" class="form-control"
+				      	required="required" title="Use if you want to delete event">
+	  					<!-- Submit button-->
+				      	<button  type="submit" class="btn btn-danger btn-lg btn-block">Submit</button>
+				      </form>
+		    		</div>
+				</details>
+			</div>
+		</div>
+		<!-- End Delete event-->
+		<!-- Edit event, form -->	
+		<div id='editevent'>
+			<div  class="ping">
+				<details open> 
+		    	<summary><b>Edit Event</b></summary>
+		    		{{#if events}}
+		    		<table class="table table-bordered">
+		    			<tr class="active" align="center">
+		    				<th>ID</th>
+		    				<th>Name</th>
+		    			</tr>
+		    			{{#each events}}
+		    			<tr class="info" >
+		    				<td>{{id}}</td>
+		    				<td>{{name}}</td>
+		    			</tr>
+				    	{{/each}}
+		    		</table>
+
+		    		{{/if}}
+		    		<div class="preinfo">
+		    		<form class="form_step" 
+				      action="/workspace/editevent" method="post">
+				      	<br>
+				      	<!-- ID EVENT-->
+				      	<input type="text" name="id" maxlength="10"
+				      	placeholder="Event ID:" class="form-control"
+				      	required="required" >
+				      	<!-- new id event -->
+				      	<input type="text" name="newid" class="form-control"
+				      	placeholder="new id: ">
+				      	<!-- new name event -->
+				      	<input type="text" name="name" class="form-control"
+				      	placeholder="new name: ">
+						<!-- Event text -->
+				      	<textarea rows="4" cols="50" name="info"  placeholder="About Event(180chars):"
+				      	class="form-control" maxlength="180"></textarea>
+	  					<!-- Submit button-->
+	  					{{#if events}}
+				      	<button  type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+				      	{{else}}
+				      	<button  type="submit" class="btn btn-primary btn-lg btn-block" disabled="disabled">Submit</button>
+				      	{{/if}}
+				      </form>
+		    		</div>
+				</details>
+			</div>
+		</div>
+		<!-- End Edit event-->
+	</div>
+	<!-- -->
+
+	<!-- -->
+	<div align="center" style="padding-top: 5px;color:white;">
+	<label>Company : {{company}} ({{type}})</label>
+	</div>
+	<!-- -->
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src='../js/workspace.js'></script>

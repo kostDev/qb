@@ -1,0 +1,36 @@
+<div class="container-narrow" id="login">
+  {{#if success_msg}}
+    <dir class="alert alert-success">{{success_msg}}</dir>
+  {{/if}}
+  {{#if error_msg}}
+    <dir class="alert alert-danger">{{error_msg}}</dir>
+  {{/if}}
+  {{#if error}}
+    <dir class="alert alert-danger">{{error}}</dir>
+  {{/if}}
+  <h2 align='center'>{{title}}</h2>
+
+  <form action='/users/login' method="post">
+  	<!--  Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input name='email' type="email" class="form-control" id="email" placeholder="Enter email" maxlength="40">
+    </div>
+    <!-- End Email-->
+    <!-- Password-->
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input name='password' type="password" class="form-control" id="pwd" placeholder="Enter password" maxlength="24">
+    </div>
+    <!-- End password-->
+    <!-- Remember checkbox
+    <div class="checkbox">
+      <label><input name='Remember' type="checkbox"> Remember me</label>
+    </div>
+    End cheakbox-->
+
+	<!-- Submit-->
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+    <!-- End Submit-->
+  </form>
+</div>

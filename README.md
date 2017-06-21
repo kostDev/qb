@@ -14,10 +14,10 @@ Modules:
 - workspace
 
 Goals:
-- [] use SASS
-- [] use typeScript
-- [] redesign web-app
-- [] rewrite workspace
-- [] add delete/edit partner
-- [] log system into profile director
-- [] login for workers
+- [ ] use SASS
+- [ ] use typeScript
+- [ ] redesign web-app
+- [ ] rewrite workspace
+- [ ] add delete/edit partner
+- [ ] log system into profile director
+- [ ] login for workers

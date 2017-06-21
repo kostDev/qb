@@ -1,0 +1,112 @@
+<div id="partners">	
+		<!-- -->
+	<div class="pakpartners">
+		<p>Partners </p>
+		</div>
+	<div id="borderpartners">
+			<table class="table table-bordered">
+				    <tr class="active">
+				    		<th>ID</th>
+			  				<th>Name</th>
+			  				<th>Email</th>
+			  				<th>Phone</th>
+			  				<th>Type</th>
+			  				<th>was created</th>
+			  				<th>
+				  				<a id='tool'><span class="glyphicon glyphicon-cog">
+				  				</span></a>
+			  				</th>
+		  			</tr>
+
+		  			<tr class="success" align="center">
+		  			<form class="form_step" action="/partners/add" method="post">
+		  					  <td align="center" >
+		  					</td>
+		  					<td align="center" >
+		  						<input type="text" name="name"
+		  						placeholder="Name*"
+		  						class="form-control" required="required" maxlength="25">
+		  					</td>
+		  					<td align="center">
+		  						<input type="email" name="email"
+								placeholder="email*"
+		  						class="form-control" required="required" maxlength="25">
+		  					</td>
+		  					<td align="center">
+		  						<input type="text" name="phone"
+		  						placeholder="Phone"
+		  						class="form-control" maxlength="15">
+		  					</td>
+		  					<td align="center">
+		  						<input type="text" name="type"
+		  						placeholder="type"
+		  						class="form-control">
+		  					</td>
+		  					<td>
+		  						<input type="text" name=""
+		  						placeholder="auto create"
+		  						class="form-control" disabled="disabled">
+		  					</td>
+		  					<td align="center">
+		  					<!--
+		  						<div class='workbuttonsl'>
+			  						<a title='delete' class="btn btn-primary btn-xs" disabled>
+									<span class="glyphicon glyphicon-pencil"></span>
+									</a>
+			  						
+			  						<a title='delete' class="btn btn-danger btn-xs" disabled>
+									<span class="glyphicon glyphicon-trash"></span>
+									</a>
+								</div>
+							-->
+		  						<div class='workbuttonsb'>
+			  						<!-- add -->
+			  						<button  type="submit" class="btn btn-success btn-xs">
+			  						<span class="glyphicon glyphicon-plus"></span>
+			  						</button>
+								</div>
+		  					</td>
+					</form>
+		  			</tr>
+		  				{{#if partners}}
+		  				{{#each partners}}
+		  				<tr class="info">
+		  					<th>{{@index}}</th>
+		  					<th>{{name}}</th>
+		  					<th>{{email}}</th>
+		  					<th>{{phone}}</th>
+		  					<th>{{type}}</th>
+		  					<th>{{created}}</th>
+		  					<th>
+		  						<div class='workbuttonsl'>
+			  						<a title='delete' class="btn btn-primary btn-xs active" >
+									<span class="glyphicon glyphicon-pencil"></span>
+									</a>
+								</div>
+			  					<div class='workbuttonsl'>	
+			  						<a title='delete' class="btn btn-danger btn-xs active">
+									<span class="glyphicon glyphicon-trash" ></span>
+									</a>
+								</div>
+								<div class="nthinfo">
+									+
+								</div>
+		  					</th>
+		  				</tr>
+		  				{{/each}}
+		  				{{/if}}
+		  		</table>
+  		</div>
+		<!-- -->
+ 		<!-- -->
+	<!-- -->
+	<div align="center" style="padding-top: 5px;color:white;">
+	<label>Company : {{company}} [{{type}}]</label>
+	</div>
+	<!-- -->
+</div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src='../js/partns.js'></script>

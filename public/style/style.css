@@ -1,0 +1,377 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+	user-select: none; 
+  font-family: Times New Roman;
+}
+#userlink{
+  text-decoration: none;
+}
+#userlink:hover{
+  color:green;
+}
+
+#userlink:active {
+  color: #00b300;
+}
+
+/* Custom container */
+.container-narrow {
+  margin: 0 auto;
+  max-width: 800px;
+}
+.container-narrow > hr {
+  margin: 15px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  margin: 10px 0;
+  text-align: center;
+  background: #f5f5f0;
+  padding-bottom: 14px;
+  border-radius: 8px;
+}
+.jumbotron h1 {
+  font-size: 72px;
+  line-height: 1;
+}
+.jumbotron .btn {
+  font-size: 20px;
+  padding: 16px 55px;
+}
+#info {
+  margin: 10px 0;
+  padding-top: 15px;
+  background-color: #e6eeff; /*#ccddff;*/
+  text-align: center;
+  border-radius: 4px;
+}
+#info, span.glyphicon-link {
+  font-size: 1.8em;
+}
+#info p{
+  font-size: 14px;
+}
+#info .col-md-12 p{
+  font-size: 18px;
+}
+.term {
+  border-bottom: 1px dotted black; /* Параметры линии */
+}
+#login{
+  background-color: #e6ffe6;
+  border-radius: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+#regist{
+  background-color:  #f2f2f2;
+  border-radius: 8px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+#registitle{
+  background: #e6e6e6;
+  box-shadow: 0 0 4px rgba(0,0,0,0.3);
+  border-radius: 1.3px;
+}
+.needstr{
+  color: red;
+}
+
+#stateinfo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    box-shadow: 0 0 4px rgba(0,0,0,0.24);
+}
+#stateinfo p{
+  font-size: 18px;
+  padding-top: 15px;
+}
+
+#zopi { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+}
+
+#zopi h1 { 
+   font-size: 59px;
+   font-family: "Times New Roman", Times, serif;
+   text-shadow: 0 0 5px rgba(0,0,0,0.4);
+   position: absolute; 
+   top: 27%; 
+   left: 0; 
+   width: 100%; 
+   color: white;
+}
+#zopi img { 
+   width: 800px;
+   height: 500px;
+}
+#workspace {
+  background-image: url('../image/blueprint.png');
+  background-color: #cccccc;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 25px;
+  color: black;
+}
+#partners{
+  background-image: url('../image/blueprint.png');
+  background-color: #cccccc;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 11px;
+  color: black;
+  border-radius: 3px;
+}
+
+.idn{
+  
+  background-color: rgba(255,244,255,0.5);
+  padding-bottom: 1px;
+  text-align: center;
+  padding-top: 0px;
+  padding-bottom: 55px;
+  margin-bottom: 30px;
+  height: auto;
+  border-radius: 4px;
+  border: solid 1px white;
+} 
+
+.pak>p{ 
+   font-size: 18px;
+   font-family: Times New Roman;
+   text-shadow: 0 0 3px rgba(0,0,0,0.3);
+   padding-left: 15px;
+}
+.pak{ 
+   float:left;
+}
+.pakpartners{ 
+   font-size: 22px;
+   font-family: Times New Roman;
+   color: white;
+   text-shadow: 0 0 3px rgba(0,0,0,0.3);
+   text-align: center;
+}
+.workpanel{
+
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-right: 5px;
+  float: right;
+
+}
+
+.workbuttonsl{
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-top: 4px;
+  padding-bottom: 1px;
+  float: left;
+  display: none;
+}
+.workbuttonsb{
+  padding-right: 1px;
+  padding-bottom: 1px;
+  padding-top: 4px;
+  padding-bottom: 1px;
+  float: left;
+  display: block;
+}
+.nthinfo{
+  display: block;
+}
+.partns{
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  text-align: center;
+  margin-bottom: 1px;
+
+}
+
+
+/* --------------   */
+.ping{
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  text-align: left;
+  margin-bottom: 11px;
+
+}
+.ping details summary{
+  background-color: rgba(0,44,0,0.3);
+  box-shadow: 0 0 3px black;
+  text-align: left;
+  padding-left: 4px;
+}
+/* Приоритет ивентов red=>ehigh |
+ b =>emiddle |  g =>elow */
+#ehigh details summary{
+  background-color: rgba(51,0,0,0.47);
+}
+#emiddle details summary{
+  background-color: rgba(0,0,51,0.41);
+}
+#elow details summary{
+  background-color: rgba(0,51,0,0.41);
+}
+/* -------------- */
+/* Partners */
+.mypartners{
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  text-align: left;
+  margin-bottom: 11px;
+
+}
+.mypartners details summary{
+  background-color: rgba(255, 219, 77,0.41);
+  border-radius: 5px;
+  box-shadow: 0 0 4px black;
+  text-align: left;
+  padding-left: 4px;
+}
+
+/* --------------- */
+/* вспливающее окно   */
+#modal_form {
+  width: 300px; 
+  height: auto; /* Рaзмеры дoлжны быть фиксирoвaны */
+  border-radius: 5px;
+  border: 3px green solid;
+  box-shadow: 0 0 3px;
+  background: rgba(255, 255, 250,0.6);
+  position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+  top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+  left: 50%; /* пoлoвинa экрaнa слевa */
+  margin-top: -150px;
+  margin-left: -150px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+  display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+  opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+  z-index: 5; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+  padding: 20px 10px;
+}
+/* ------------флома для add worker-------------- */
+.form_step input{
+  margin-bottom: 3px;
+}
+.form_step {
+  margin-bottom: 3px;
+}
+.form_step p{
+  margin-bottom: 4px;
+}
+/* --------------------------------------------- */
+.preinfo {
+    display: block;
+    font-family: monospace;
+    font-size: 12px;
+    white-space: none;
+/*    text-align: left; */
+    margin: 1px 0;
+    background-color: rgba(255, 255, 250,0.66);
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+} 
+
+textarea {
+   resize: none;
+}
+/* --- workBook -- id: borderworker, addworker,
+                       editworker, deleteworker*/
+#bodrderworker{
+  display: block;
+}
+#addworker{
+  display: none;
+}
+#editworker{
+  display: none;
+}
+#deleteworker{
+  display: none;
+}
+/* -- workBook end -- */
+/* --- event -- id: borderevent, addevent, deleteevent */
+#borderevent{
+  display: block;
+}
+#addevent{
+  display: none;
+}
+#editevent{
+  display: none;
+}
+#deleteevent{
+  display: none;
+}
+/* Partners*/
+#borderpartners{
+  box-shadow: 0 0 14px black;
+}
+
+/* Profile */
+
+#profile{
+  background-image: url('../image/blueprint.png');
+  background-color: #cccccc;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+#rowposition{
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  color:black;
+}
+#rowposition2{
+  margin-top: 4px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 15px;
+  color:black;
+}
+#persdata1{
+  background-color: rgba(255, 255, 250,0.66);
+  margin: 1px 0;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+#persdata2{
+  background-color: rgba(255, 255, 250,0.66);
+  margin: 1px 0;
+  padding-bottom: 5px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.personalworkerno{
+  background-color: rgba(155, 222, 255,0.4);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}
+.personalworkeryes{
+  background-color: rgba(153, 255, 153,0.4);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding-left: 4px;
+  padding-right: 4px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{{{title}}}</title>
+	<!--<link rel="stylesheet" type="text/css" href="/style/style.css"> -->
+  <!-- favico -->
+  <link rel="icon" href="../image/favico.ico">
+  <!-- end favico -->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- new -->
+  <!-- my style -->
+  <link rel="stylesheet" type="text/css" href="../style/style.css">
+  <!-- End style -->
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- -->
+
+	<!-- -->
+</head>
+<body>
+	<div class="container-narrow">
+
+      	<div class="masthead">
+       		<ul class="nav nav-pills pull-right">
+          {{#if user}}
+         	  <li><a href="/workspace">WorkSpace</a></li>
+            <li><a href="/partners">Partners</a></li>
+          {{else}}
+            <li><a href="/">Home</a></li>
+          {{/if}}
+          	<li><a href="#">Manual</a></li>
+          	<li><a href="#">Contact</a></li>
+          {{#if user}}
+            <li><a href="/users/logout">Log out</a></li>
+          {{else}}
+            <li><a href="/users/login">Login</a></li>
+          {{/if}}
+        	</ul>
+        	<h3 class="muted" >
+          {{#if name}}
+          <b>qb</b>| Welcome, <a id='userlink' href="/profile">{{name}}</a>
+          {{else}}
+           Web-app (qbisness)
+          {{/if}}
+         </h3>
+    	</div>
+
+      <hr>
+      	{{#if show}}
+		<div class="jumbotron">
+        	<h1>Make your business processes easy!</h1>
+        	<p class="lead">The best way to control your bisness!</p>
+        	<a class="btn btn-large btn-success" 
+        	href="/users/registration">
+        	Sign up today</a>
+    	</div>
+
+    	<!-- info -->
+      	<div class="row" id='info'>
+      		<div class="col-md-12">
+      			<p>Our Functionality:</p>
+      		</div>
+      		<div class="col-md-4">
+      			<span class="glyphicon glyphicon-book"></span>
+      			<p><span class='term'>Book of workers</span></p>
+      		</div>
+  			<div class="col-md-4">
+      			<span class="glyphicon glyphicon-list-alt"></span>
+      			<p><span class='term'>Add Partners</span></p>
+      		</div>
+ 		    <div class="col-md-4">
+      			<span class="glyphicon glyphicon-calendar"></span>
+      			<p><span class='term'>Event Manager</span></p>
+      		</div>
+      	</div>
+      	{{else}}
+      		{{{body}}}
+      	{{/if}}
+      <hr>
+      <!-- End info -->
+
+      	<!-- footer -->
+    	<div class="footer">
+      		<p align="right">&copy; Kostya Potapenko 2017</p>
+    	</div>
+    	<!-- End footer-->
+	</div>
+
+</body>
+</html>

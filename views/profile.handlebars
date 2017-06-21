@@ -1,0 +1,121 @@
+<div id="profile">
+	<p align="center">Profile info & config</p>
+
+	<div class="row" id="rowposition">
+		<div class="col-md-5" id='persdata1'>
+			<p>Personal data:</p>
+			<table class="table table-bordered">
+				<tr class="active">
+					<th>Name:</th>
+					<td>{{user.name}}</td>
+				</tr>
+				<tr class="active">
+					<th>Company:</th>
+					<td>{{user.company}}</td>
+				</tr>
+				<tr class="active">
+					<th>Country:</th>
+					<td >{{user.country}}</td>
+				</tr>
+				<tr class="active">
+					<th>email:</th>
+					<td>{{user.email}}</td>
+				</tr>
+				<tr class="info">
+					<th>password</th>
+					<td>********</td>
+				</tr>
+				<tr class="active">
+					<th>Workers:</th>
+					<td><b>{{workers_count}}</b>/8</td>
+				</tr>
+				<tr class="active">
+					<th>Partners:</th>
+					<td><b>{{partners_count}}</b>/7</td>
+				</tr>
+				<tr class="active">
+					<th>Events:</th>
+					<td><b>{{events_count}}</b>/15</td>
+				</tr>
+				<tr class="success">
+					<th>Type:</th>
+					<td>{{user.typeap}}</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-1" ></div>
+  		<div class="col-md-6" id='persdata2'>
+  			<p>Workers connected to project:</p>
+  			{{#if workers}}
+  				{{#each workers}}
+  				<details
+	  				{{#if password}}
+	  				class="personalworkeryes"
+	  				{{else}}
+	  				class="personalworkerno"
+	  				{{/if}} 
+	  					>
+				  <summary>{{name}} 
+				  {{#if password}}
+				  [actived]
+				  {{else}}
+				  [not activated]
+				  {{/if}}
+				  </summary>
+				  <table class="table table-bordered">
+				  <tr class="active">
+				  	<form action="/profile/active" 
+				  		  method="post">
+				  	<th>email:</th>
+				  	<td>
+				  		{{#if password}}
+				  		<input type="text" name="workerEmail" placeholder="email" 
+				  		value="{{email}}" 
+				  		disabled="disabled" 
+				  		class="form-control"><br>
+				  		{{else}}
+				  		<input type="text" name="workerEmail" placeholder="email" 
+				  		value="{{email}}" 
+				  		class="form-control"><br>
+				  		{{/if}}
+
+				  	</td>
+				  </tr>
+				  <tr class="active">
+				  	<th>password:</th>
+				  	<td>
+					  	{{#if password}}
+						<input type="password" name="password" placeholder="{{password}}"
+						value="*******" 
+				  		disabled="disabled"
+				  		class="form-control">
+				  		{{else}}
+				  		<input type="password" name="password"
+				  			 	required="required"
+				  			 	placeholder="password"
+				  			 	class="form-control">
+				  		{{/if}}
+				  		
+				  	</td>
+				  </tr>
+				  {{#unless password}}
+				  <tr class="success">
+				  	<td colspan="2">
+				  		<button type="submit"
+				  		class="btn btn-success btn-lg btn-block">Submit</button>
+				  	</td>
+				  </tr>
+				  {{/unless}}
+				  </form>
+				  </table>
+				</details>
+  				{{/each}}
+  			{{/if}}
+  		</div>
+	</div>
+	<!--<div class="row" id="rowposition2">
+	<div class="col-md-5" id='persdata1'>Project Log:</div>
+	<div class="col-md-1" ></div>
+	<div class="col-md-6" id='persdata2'></div>
+	</div> -->
+</div>

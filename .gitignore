@@ -1,0 +1,5 @@
+# ignore npm modules 
+# my folder with modules
+node_modules
+# ignore idea tresh
+.idea
